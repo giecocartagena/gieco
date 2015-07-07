@@ -1,16 +1,16 @@
-<?php namespace transfor\Http\Controllers\Admin;
+<?php namespace giecocartagena\Http\Controllers\Admin;
 
 // Modelo
 
-use transfor\library\myFunctions;
-use transfor\Producto;
-use transfor\Foto;
+use giecocartagena\library\myFunctions;
+use giecocartagena\Producto;
+use giecocartagena\Foto;
 
-use transfor\Http\Requests;
+use giecocartagena\Http\Requests;
 use Illuminate\Http\Request;
-use transfor\Http\Requests\CreateFotoRequest;
+use giecocartagena\Http\Requests\CreateFotoRequest;
 
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Controllers\Controller;
 
 
 class FotoController extends Controller {

@@ -1,14 +1,14 @@
-<?php namespace transfor\Http\Controllers\Admin;
+<?php namespace giecocartagena\Http\Controllers\Admin;
 
-use transfor\Http\Requests\CreateCmsNoticiaRequest;
-use transfor\Http\Requests\EditCmsNoticiaRequest;
+use giecocartagena\Http\Requests\CreateCmsNoticiaRequest;
+use giecocartagena\Http\Requests\EditCmsNoticiaRequest;
 
 // Modelo
-use transfor\Cmsnoticia;
-use transfor\Cmsseccion;
+use giecocartagena\Cmsnoticia;
+use giecocartagena\Cmsseccion;
 
-use transfor\Http\Requests;
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Requests;
+use giecocartagena\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

@@ -1,4 +1,4 @@
-<?php namespace transfor\Providers;
+<?php namespace giecocartagena\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'transfor\Http\Controllers';
+	protected $namespace = 'giecocartagena\Http\Controllers';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.

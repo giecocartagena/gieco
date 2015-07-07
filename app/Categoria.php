@@ -1,4 +1,4 @@
-<?php namespace transfor;
+<?php namespace giecocartagena;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Categoria extends Model {
 
     public function productos()
     {
-        return $this->hasMany('transfor\Producto');
+        return $this->hasMany('giecocartagena\Producto');
     }
 
 }

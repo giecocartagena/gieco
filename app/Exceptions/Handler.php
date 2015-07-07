@@ -1,4 +1,4 @@
-<?php namespace transfor\Exceptions;
+<?php namespace giecocartagena\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

@@ -8,7 +8,7 @@
             <ul>
                 <li class="active"><a href="/">INICIO</a></li>
                 <li><a href="/nosotros">NOSOTROS</a></li>
-                <li><a href="/categoria">PRODUCTOS</a></li>
+                <li><a href="/admin">REGISTRO</a></li>
                 <li><a href="/contactenos">CONTACTENOS</a></li>
                 <div class="clearfix"></div>
             </ul>

@@ -1,4 +1,4 @@
-<?php namespace transfor;
+<?php namespace giecocartagena;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Cmsseccion extends Model {
 
     public function cms_noticias()
     {
-        return $this->hasMany('transfor\CmsNoticia');
+        return $this->hasMany('giecocartagena\CmsNoticia');
     }
 
 }

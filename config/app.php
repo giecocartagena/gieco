@@ -145,11 +145,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'transfor\Providers\AppServiceProvider',
-		'transfor\Providers\BusServiceProvider',
-		'transfor\Providers\ConfigServiceProvider',
-		'transfor\Providers\EventServiceProvider',
-		'transfor\Providers\RouteServiceProvider',
+		'giecocartagena\Providers\AppServiceProvider',
+		'giecocartagena\Providers\BusServiceProvider',
+		'giecocartagena\Providers\ConfigServiceProvider',
+		'giecocartagena\Providers\EventServiceProvider',
+		'giecocartagena\Providers\RouteServiceProvider',
 
 	],
 

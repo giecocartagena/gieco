@@ -1,4 +1,4 @@
-<?php namespace transfor\Http;
+<?php namespace giecocartagena\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'transfor\Http\Middleware\VerifyCsrfToken',
+		'giecocartagena\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'transfor\Http\Middleware\Authenticate',
+		'auth' => 'giecocartagena\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'transfor\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'giecocartagena\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

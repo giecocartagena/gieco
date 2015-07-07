@@ -1,4 +1,4 @@
-<?php namespace transfor\Http\Middleware;
+<?php namespace giecocartagena\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

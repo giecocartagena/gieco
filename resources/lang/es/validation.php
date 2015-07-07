@@ -104,6 +104,7 @@ return [
     */
 
     'attributes' => [
+        'codigo' => 'Código',
         'email' => 'Correo electrónico',
         'password' => 'Contraseña',
     ],

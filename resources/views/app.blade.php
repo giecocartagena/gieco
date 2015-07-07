@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Representaciones TRANSFOR :: NotiMicro CMS</title>
+	<title>GIECO :: Cartagena</title>
 
     {!! Html::style('css/app.css') !!}
 

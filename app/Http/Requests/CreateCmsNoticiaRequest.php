@@ -1,6 +1,6 @@
-<?php namespace transfor\Http\Requests;
+<?php namespace giecocartagena\Http\Requests;
 
-use transfor\Http\Requests\Request;
+use giecocartagena\Http\Requests\Request;
 
 class CreateCmsNoticiaRequest extends Request {
 

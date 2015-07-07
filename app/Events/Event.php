@@ -1,4 +1,4 @@
-<?php namespace transfor\Events;
+<?php namespace giecocartagena\Events;
 
 abstract class Event {
 

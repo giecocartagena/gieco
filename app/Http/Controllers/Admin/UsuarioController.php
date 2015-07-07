@@ -1,10 +1,10 @@
-<?php namespace transfor\Http\Controllers\Admin;
+<?php namespace giecocartagena\Http\Controllers\Admin;
 
 // Modelo
-use transfor\User;
+use giecocartagena\User;
 
-use transfor\Http\Requests;
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Requests;
+use giecocartagena\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Request;
 use Illuminate\Routing\Redirector;

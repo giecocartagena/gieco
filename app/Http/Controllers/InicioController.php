@@ -1,10 +1,10 @@
-<?php namespace transfor\Http\Controllers;
+<?php namespace giecocartagena\Http\Controllers;
 
 // Modelos
-use transfor\Categoria;
-use transfor\Cmsnoticia;
+use giecocartagena\Categoria;
+use giecocartagena\Cmsnoticia;
 
-use transfor\Http\Requests\ContactFormRequest;
+use giecocartagena\Http\Requests\ContactFormRequest;
 
 class InicioController extends Controller {
 

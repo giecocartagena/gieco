@@ -19,11 +19,10 @@
     			</div>
 
     			<div class="panel panel-default">
-                    <div class="panel-heading">Edición de los productos y/o servicios vender</div>
+                    <div class="panel-heading">Edición del registro poblacional</div>
 
                     <div class="panel-body">
-                        <a href="/admin/categoria/" class="btn btn-primary" role="button">Listado de categorías</a>
-                        <a href="/admin/producto/" class="btn btn-primary" role="button">Listado de productos / servicios</a>
+                        <a href="/admin/registropoblacional/" class="btn btn-primary" role="button">Listado del registro poblacional</a>
                     </div>
                 </div>
 

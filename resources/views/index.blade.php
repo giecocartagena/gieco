@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Representaciones TRANSFOR S.A.S.</title>
+        <title>GIECO Cartagena</title>
         {!! Html::style('css/bootstrap.css') !!}
         <!-- Custom Theme files -->
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
@@ -116,8 +116,8 @@
         <div class="header-bottom">
             <div class="container">
               <div class="title">
-                <h1 style="color:#FFFF00">Representaciones TRANSFOR S.A.S.</h1>
-                <h2 style="font-size:1.5em">Acero certificado antisismico. Cumple con sello de reglamento técnico STM A 706 GR 60 NTC 2289. </h2>
+                <h1 style="color:#FFFF00">GIECO - Cartagena</h1>
+                <h2 style="font-size:1.5em">Grupo de Investigación Epidemiológica y Clínica en Oncología - Universidad de Cartagena</h2>
               </div>
             </div>
         </div>
@@ -125,17 +125,6 @@
         <!-- header-section-ends -->
         <!-- content-section-starts -->
         <div class="content">
-
-        <div class="tables-section" id="Shortcodes">
-            <div class="container">
-                <div class="table-head text-center">
-                    <h3>Categorías de productos</h3>
-                </div>
-
-                @include('partials.listarcategorias')
-
-             </div>
-          </div>
 
           <div class="clearfix"></div>
 
@@ -151,7 +140,7 @@
         <div class="footer">
             <div class="container">
                 <div class="copy-rights">
-                    <p>Representaciones Transfor &copy; 2015  Todos los derechos reservados </p>
+                    <p>GIECO - Cartagena &copy; 2015  Todos los derechos reservados </p>
                     <p style="font-size: 0.75em">Desarrollo por &nbsp;<a href="http://www.rafaelvarela.com" target="target_blank">Soluciones Integrales de Cómputo</a></p>
                 </div>
                 <div class="clearfix"></div>

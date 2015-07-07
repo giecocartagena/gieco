@@ -1,6 +1,6 @@
-<?php namespace transfor\Http\Controllers\Auth;
+<?php namespace giecocartagena\Http\Controllers\Auth;
 
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;

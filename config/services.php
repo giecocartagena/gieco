@@ -30,7 +30,7 @@ return [
 	],
 
 	'stripe' => [
-		'model'  => 'transfor\User',
+		'model'  => 'giecocartagena\User',
 		'secret' => '',
 	],
 

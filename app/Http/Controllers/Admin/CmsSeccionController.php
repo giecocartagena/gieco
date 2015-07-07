@@ -1,14 +1,14 @@
-<?php namespace transfor\Http\Controllers\Admin;
+<?php namespace giecocartagena\Http\Controllers\Admin;
 
 
-use transfor\Http\Requests\CreateCmsSeccionRequest;
-use transfor\Http\Requests\EditCmsSeccionRequest;
+use giecocartagena\Http\Requests\CreateCmsSeccionRequest;
+use giecocartagena\Http\Requests\EditCmsSeccionRequest;
 
 // Modelo
-use transfor\Cmsseccion;
+use giecocartagena\Cmsseccion;
 
-use transfor\Http\Requests;
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Requests;
+use giecocartagena\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

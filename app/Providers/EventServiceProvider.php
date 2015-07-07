@@ -1,4 +1,4 @@
-<?php namespace transfor\Providers;
+<?php namespace giecocartagena\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

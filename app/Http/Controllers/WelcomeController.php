@@ -1,4 +1,4 @@
-<?php namespace transfor\Http\Controllers;
+<?php namespace giecocartagena\Http\Controllers;
 
 class WelcomeController extends Controller {
 

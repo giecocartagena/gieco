@@ -1,4 +1,4 @@
-<?php namespace transfor;
+<?php namespace giecocartagena;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Foto extends Model {
 
     public function productos()
     {
-        return $this->belongsTo('transfor\Producto');
+        return $this->belongsTo('giecocartagena\Producto');
     }
 
 }

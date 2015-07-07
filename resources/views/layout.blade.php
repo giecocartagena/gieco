@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Representaciones TRANSFOR S.A.S.</title>
+        <title>GIECO Cartagena</title>
         {!! Html::style('css/bootstrap.css') !!}
         <!-- Custom Theme files -->
         {!! Html::style('css/style.css') !!}
@@ -61,7 +61,7 @@
         <div class="footer">
             <div class="container">
                 <div class="copy-rights">
-                    <p>Representaciones Transfor &copy; 2015  Todos los derechos reservados </p>
+                    <p>Gieco Cartagena &copy; 2015  Todos los derechos reservados </p>
                     <p style="font-size: 0.75em">Desarrollo por &nbsp;<a href="http://www.rafaelvarela.com" target="target_blank">Soluciones Integrales de Cómputo</a></p>
                 </div>
                 <div class="clearfix"></div>

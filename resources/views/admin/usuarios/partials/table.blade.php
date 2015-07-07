@@ -1,13 +1,15 @@
 <table class="table table-striped">
     <tr>
         <th>#</th>
-        <th>Nombre</th>
+        <th>Código</th>
+        <th>Nombre / Descripción</th>
         <th>Email</th>
         <th>Acciones</th>
     </tr>
     @foreach($usuarios as $usuario)
         <tr data-id="{{ $usuario->id }}">
             <td>{{ $usuario->id }}</td>
+            <td>{{ $usuario->codigo }}</td>
             <td>{{ $usuario->name }}</td>
             <td>{{ $usuario->email }}</td>
             <td>

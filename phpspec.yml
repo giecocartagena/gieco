@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: transfor
-        psr4_prefix: transfor
+        namespace: giecocartagena
+        psr4_prefix: giecocartagena
         src_path: app

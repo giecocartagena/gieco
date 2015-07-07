@@ -1,4 +1,4 @@
-<?php namespace transfor\Providers;
+<?php namespace giecocartagena\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'transfor\Services\Registrar'
+			'giecocartagena\Services\Registrar'
 		);
 	}
 

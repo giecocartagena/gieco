@@ -1,14 +1,14 @@
-<?php namespace transfor\Http\Controllers\Admin;
+<?php namespace giecocartagena\Http\Controllers\Admin;
 
-use transfor\Http\Requests\CreateProductoRequest;
-use transfor\Http\Requests\EditProductoRequest;
+use giecocartagena\Http\Requests\CreateProductoRequest;
+use giecocartagena\Http\Requests\EditProductoRequest;
 
 // Modelo
-use transfor\Producto;
-use transfor\Categoria;
+use giecocartagena\Producto;
+use giecocartagena\Categoria;
 
-use transfor\Http\Requests;
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Requests;
+use giecocartagena\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;

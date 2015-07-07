@@ -1,4 +1,4 @@
-<?php namespace transfor\Http\Requests;
+<?php namespace giecocartagena\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

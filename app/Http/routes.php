@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
     Route::resource('producto', 'ProductoController');
     Route::controller('foto', 'FotoController');
 
+    // -- REGISTRO POBLACIONAL (Logica del negocio)
+    Route::resource('registropoblacional', 'RegistropoblacionalController');
+
     // -- NOTICIAS (Textos del CMS) ------------------------------//
     Route::resource('cmsseccion', 'CmsSeccionController');
     Route::resource('cmsnoticia', 'CmsNoticiaController');

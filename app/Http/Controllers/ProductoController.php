@@ -1,12 +1,12 @@
-<?php namespace transfor\Http\Controllers;
+<?php namespace giecocartagena\Http\Controllers;
 
 // Modelos
-use transfor\Categoria;
-use transfor\Foto;
-use transfor\Producto;
+use giecocartagena\Categoria;
+use giecocartagena\Foto;
+use giecocartagena\Producto;
 
-use transfor\Http\Requests;
-use transfor\Http\Controllers\Controller;
+use giecocartagena\Http\Requests;
+use giecocartagena\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

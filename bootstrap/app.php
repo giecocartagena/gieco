@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'transfor\Http\Kernel'
+	'giecocartagena\Http\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
-	'transfor\Console\Kernel'
+	'giecocartagena\Console\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'transfor\Exceptions\Handler'
+	'giecocartagena\Exceptions\Handler'
 );
 
 /*

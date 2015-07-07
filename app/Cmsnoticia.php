@@ -1,4 +1,4 @@
-<?php namespace transfor;
+<?php namespace giecocartagena;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Cmsnoticia extends Model {
 
     public function cms_secciones()
     {
-        return $this->belongsTo('transfor\Cmsseccion');
+        return $this->belongsTo('giecocartagena\Cmsseccion');
     }
 
 }

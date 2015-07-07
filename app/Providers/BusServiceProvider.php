@@ -1,4 +1,4 @@
-<?php namespace transfor\Providers;
+<?php namespace giecocartagena\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'transfor\Commands', 'transfor\Handlers\Commands'
+				$command, 'giecocartagena\Commands', 'giecocartagena\Handlers\Commands'
 			);
 		});
 	}

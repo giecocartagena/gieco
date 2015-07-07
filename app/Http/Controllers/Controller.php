@@ -1,4 +1,4 @@
-<?php namespace transfor\Http\Controllers;
+<?php namespace giecocartagena\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;
