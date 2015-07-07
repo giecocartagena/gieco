@@ -16,18 +16,12 @@ class Registrar implements RegistrarContract {
 	{
 		return Validator::make($data, [
             'codigo' => 'required|max:16|unique:users',
-			'name' => 'required|max:255',
+			'name' => 'required|max:254',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|confirmed|min:5',
 		]);
 	}
 
-	/**
-	 * Create a new user instance after a valid registration.
-	 *
-	 * @param  array  $data
-	 * @return User
-	 */
 	public function create(array $data)
 	{
 		return User::create([
