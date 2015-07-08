@@ -10,8 +10,7 @@ Route::post('contactenos', ['as' => 'contactenos_store', 'uses' => 'InicioContro
 
 
 Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController'
 ]);
 
 /*
