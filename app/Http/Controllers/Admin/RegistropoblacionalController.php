@@ -70,7 +70,7 @@ class RegistropoblacionalController extends Controller {
 	{
 		$entradas = $request->all();
 		// dd($entradas['fechanacimiento']);
-		$entradas['fechanacimiento'] = '';
+		// $entradas['fechanacimiento'] = '';
         $registropoblacional = Registropoblacional::create($entradas);
         return redirect()->route('admin.registropoblacional.index');
 	}
@@ -115,6 +115,8 @@ class RegistropoblacionalController extends Controller {
 	public function update(EditRegistropoblacionalRequest $request, $id)
 	{
         $registropoblacional = Registropoblacional::findOrFail($id);
+        // dd($request->all());
+
         $registropoblacional->fill($request->all());
         $registropoblacional->save();
 
