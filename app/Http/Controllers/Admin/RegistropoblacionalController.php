@@ -6,6 +6,15 @@ use giecocartagena\Http\Requests\EditRegistropoblacionalRequest;
 // Modelo
 use giecocartagena\Registropoblacional;
 
+// Modelos auxiliares
+use giecocartagena\Genero;
+use giecocartagena\Eps;
+use giecocartagena\Regimenss;
+use giecocartagena\Tiposmuestras;
+use giecocartagena\Lugaresdiagnostico;
+use giecocartagena\Tratamientos;
+use giecocartagena\Meses;
+
 use giecocartagena\Http\Requests;
 use giecocartagena\Http\Controllers\Controller;
 
@@ -20,23 +29,52 @@ class RegistropoblacionalController extends Controller {
         $this->middleware('auth');
     }
 
+
 	public function index()
 	{
 		$registropoblacional = Registropoblacional::Paginate(5);
         return view('admin.registropoblacional.index', compact('registropoblacional'));
 	}
 
+
 	public function create()
 	{
+        $genero = ['' => ''] + Genero::lists('nombre', 'codigo');
+		$datos['genero'] = $genero;
+
+		$eps = ['' => ''] + Eps::lists('nombre', 'id');
+		$datos['eps'] = $eps;
+
+		$regimenss = ['' => ''] + Regimenss::lists('nombre', 'codigo');
+		$datos['regimenss'] = $regimenss;
+
+		$tiposmuestras = ['' => ''] + Tiposmuestras::lists('nombre', 'codigo');
+		$datos['tiposmuestras'] = $tiposmuestras;
+
+		$lugaresdiagnostico = ['' => ''] + Lugaresdiagnostico::lists('nombre', 'codigo');
+		$datos['lugaresdiagnostico'] = $lugaresdiagnostico;
+
+		$tratamientos = ['' => ''] + Tratamientos::lists('nombre', 'codigo');
+		$datos['tratamientos'] = $tratamientos;
+
+		$meses = ['' => ''] + Meses::lists('nombre', 'id');
+		$datos['meses'] = $meses;
+		
+
         // return 'pantalla para crear el registro poblacional';
-		return view('admin.registropoblacional.create');
+		return view('admin.registropoblacional.create', $datos);
 	}
+
 
 	public function store(CreateRegistropoblacionalRequest $request)
 	{
-        $registropoblacional = Registropoblacional::create($request->all());
+		$entradas = $request->all();
+		// dd($entradas['fechanacimiento']);
+		$entradas['fechanacimiento'] = '';
+        $registropoblacional = Registropoblacional::create($entradas);
         return redirect()->route('admin.registropoblacional.index');
 	}
+
 
 	public function show($id)
 	{
@@ -45,8 +83,33 @@ class RegistropoblacionalController extends Controller {
 
 	public function edit($id)
 	{
+		// Esto es para el combobox
+		$genero = Genero::lists('nombre', 'codigo');
+		$datos['genero'] = $genero;
+
+		$eps = Eps::lists('nombre', 'id');
+		$datos['eps'] = $eps;
+
+		$regimenss = Regimenss::lists('nombre', 'codigo');
+		$datos['regimenss'] = $regimenss;
+
+		$tiposmuestras = Tiposmuestras::lists('nombre', 'codigo');
+		$datos['tiposmuestras'] = $tiposmuestras;
+
         $registropoblacional = Registropoblacional::findOrFail($id);
-        return view('admin.registropoblacional.edit', compact('registropoblacional'));
+        $datos['registropoblacional'] = $registropoblacional;
+
+        $lugaresdiagnostico = Lugaresdiagnostico::lists('nombre', 'codigo');
+		$datos['lugaresdiagnostico'] = $lugaresdiagnostico;
+
+		$tratamientos = Tratamientos::lists('nombre', 'codigo');
+		$datos['tratamientos'] = $tratamientos;
+
+		$meses = Meses::lists('nombre', 'id');
+		$datos['meses'] = $meses;
+
+
+        return view('admin.registropoblacional.edit', $datos);
 	}
 
 	public function update(EditRegistropoblacionalRequest $request, $id)

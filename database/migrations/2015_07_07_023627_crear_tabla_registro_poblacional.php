@@ -29,9 +29,11 @@ class CrearTablaRegistroPoblacional extends Migration {
             $table->integer('estrato')->unsigned();
 
             // Datos de tumor
-            $table->date('iniciosintomas')->nullable();
+            $table->integer('iniciosintomasanio')->nullable();
+            $table->integer('iniciosintomasmes')->nullable();
             $table->date('fechadiagnostico')->nullable();
             $table->string('metododiagnostico',90)->nullable();
+            $table->string('otrotipomuestra',130)->nullable();
             $table->string('localizacionprimaria',90)->nullable();
             $table->string('morfologia',90)->nullable();
             $table->integer('estadio')->unsigned();

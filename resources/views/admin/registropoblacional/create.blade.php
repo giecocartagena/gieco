@@ -1,5 +1,12 @@
 @extends('app')
 
+@section('estilos')
+	<style>		
+		.form-control{text-transform: uppercase;}
+	</style>
+	{!! Html::style('css/jquery-ui.css') !!}
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -22,4 +29,19 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('/js/jquery-ui.min.js') }}"></script>
+    <script>
+
+    	//Array para dar formato en español
+    	@include('admin.registropoblacional.partials.spanishcalendar')        
+
+		$(function() {
+			$( "#fechanacimiento" ).datepicker();
+			$( "#fechadiagnostico" ).datepicker();			
+		});
+		
+	</script>
 @endsection
