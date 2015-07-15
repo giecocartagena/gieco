@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'Tratamientos', '0000-00-00 00:00:00', '2015-07-05 12:27:06');
+(1, 'Tratamientos', '0000-00-00 00:00:00', '2015-07-05 12:28:14');
 
 -- --------------------------------------------------------
 
