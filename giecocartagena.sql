@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-07-2015 a las 06:11:42
+-- Tiempo de generación: 21-07-2015 a las 19:14:24
 -- Versión del servidor: 5.6.19-0ubuntu0.14.04.1
 -- Versión de PHP: 5.6.10-1+deb.sury.org~trusty+1
 
@@ -395,24 +395,26 @@ CREATE TABLE IF NOT EXISTS `registropoblacional` (
   `numerobiopsia` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lugartratamiento` varchar(90) COLLATE utf8_unicode_ci DEFAULT NULL,
   `datostratamiento` int(10) unsigned NOT NULL,
+  `fechaultcontrolmed` date NOT NULL,
   `certificadodefuncion` varchar(90) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `registropoblacional_cedula_unique` (`cedula`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Volcado de datos para la tabla `registropoblacional`
 --
 
-INSERT INTO `registropoblacional` (`id`, `cedula`, `iniciales`, `sexo`, `fechanacimiento`, `edad`, `residenciahabitual`, `lugarnacimiento`, `regimenseguridadsocial`, `eps`, `estrato`, `iniciosintomasanio`, `iniciosintomasmes`, `fechadiagnostico`, `metododiagnostico`, `otrotipomuestra`, `localizacionprimaria`, `morfologia`, `estadio`, `lugardiganostico`, `numerobiopsia`, `lugartratamiento`, `datostratamiento`, `certificadodefuncion`, `created_at`, `updated_at`) VALUES
-(1, '73587852225', 'gc', 'M', '1938-09-01', 76, 'CARRERA 1, CALLE 2', 'CARTAGENA', 'CONTIBUTIVO', 1, 3, 2004, 4, '2015-09-02', '3', '', 'DSSD', 'A', 1, '1', '1', 'C', 1, '', '2015-07-07 10:16:57', '2015-07-20 02:28:40'),
-(2, '458552369', 'mo', 'F', '0000-00-00', 36, 'CARTAGENA', 'CICUCO', 'CONTIBUTIVO', 2, 2, 0, 0, NULL, '4', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'TIPO 1', 0, '4', 'ABC123456', 'ONCOLOGOS DEL CARIBE', 5, '', '2015-07-07 12:21:59', '2015-07-13 22:48:35'),
-(3, '45956235', 'MM', 'F', '2015-07-09', 26, 'CARRERA 1, CALLE 2', 'SANTA MARTA', NULL, 1, 1, 1956, 4, '2015-07-02', '3', '', 'XXX', 'YYYY', 0, '4', '56545', 'XXXXX', 5, '', '2015-07-14 16:47:20', '2015-07-15 15:06:34'),
-(4, '656541', 'MF', 'M', '2015-07-10', 0, 'CARTAGENA', 'CARTAGENA', NULL, 1, 1, 1953, 9, '2015-07-16', '1', 'DD', 'DD', 'TIPO 1', 0, '3', '665464', 'ONCOLOGOS DEL CARIBE', 3, '', '2015-07-15 15:09:21', '2015-07-15 15:09:21'),
-(5, '4511212', 'IJ', 'M', '2013-05-07', 60, 'CARTAGENA', 'CARTAGENA', NULL, 1, 1, 1964, 9, '2015-07-02', '3', '', 'LOCALIZADA', 'TIPO 1', 0, '1', '', 'ONCOLOGOS DEL CARIBE', 3, '', '2015-07-20 00:33:57', '2015-07-20 00:33:57'),
-(6, '56454', 'JP', 'F', '1994-07-07', 21, 'CARTAGENA', 'EL GUAMO', NULL, 1, 1, 1958, 10, '2015-07-02', '2', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'A', 0, '4', '5455', 'ONCOLOGOS DEL CARIBE', 4, '', '2015-07-20 02:31:27', '2015-07-20 02:31:27');
+INSERT INTO `registropoblacional` (`id`, `cedula`, `iniciales`, `sexo`, `fechanacimiento`, `edad`, `residenciahabitual`, `lugarnacimiento`, `regimenseguridadsocial`, `eps`, `estrato`, `iniciosintomasanio`, `iniciosintomasmes`, `fechadiagnostico`, `metododiagnostico`, `otrotipomuestra`, `localizacionprimaria`, `morfologia`, `estadio`, `lugardiganostico`, `numerobiopsia`, `lugartratamiento`, `datostratamiento`, `fechaultcontrolmed`, `certificadodefuncion`, `created_at`, `updated_at`) VALUES
+(1, '73587852225', 'gc', 'M', '1938-09-01', 76, '1', 'CARTAGENA', '1', 1, 3, 2004, 4, '2015-09-02', '3', '', 'DSSD', 'A', 1, '1', '1', 'C', 1, '2015-07-02', '', '2015-07-07 10:16:57', '2015-07-21 16:00:49'),
+(2, '458552369', 'mo', 'F', '0000-00-00', 36, '1', 'CICUCO', '1', 2, 2, 1960, 1, '0000-00-00', '4', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'TIPO 1', 0, '4', 'ABC123456', 'ONCOLOGOS DEL CARIBE', 5, '0000-12-00', '', '2015-07-07 12:21:59', '2015-07-21 16:52:52'),
+(3, '45956235', 'MM', 'F', '2015-07-09', 26, '1', 'SANTA MARTA', '1', 1, 1, 1956, 4, '2015-07-02', '3', '', 'XXX', 'YYYY', 0, '4', '56545', 'XXXXX', 5, '2015-03-12', '', '2015-07-14 16:47:20', '2015-07-21 12:40:01'),
+(4, '656541', 'MF', 'M', '0000-00-00', 0, '2', 'CARTAGENA', '1', 1, 1, 1953, 9, '2015-07-16', '1', 'DD', 'DD', 'TIPO 1', 0, '3', '665464', 'ONCOLOGOS DEL CARIBE', 3, '2015-07-01', '', '2015-07-15 15:09:21', '2015-07-21 19:13:01'),
+(5, '4511212', 'IJ', 'M', '0000-00-00', 60, '3', 'CARTAGENA', '1', 1, 1, 1964, 9, '2015-07-02', '3', '', 'LOCALIZADA', 'TIPO 1', 0, '1', '', 'ONCOLOGOS DEL CARIBE', 3, '0000-12-00', '', '2015-07-20 00:33:57', '2015-07-21 16:55:02'),
+(6, '56454', 'JP', 'F', '1994-07-07', 21, 'CARTAGENA', 'EL GUAMO', NULL, 1, 1, 1958, 10, '2015-07-02', '2', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'A', 0, '4', '5455', 'ONCOLOGOS DEL CARIBE', 4, '0000-00-00', '', '2015-07-20 02:31:27', '2015-07-20 02:31:27'),
+(7, '20525544', 'DM', 'M', '1996-06-05', 19, '2', 'CARTAGENA', '3', 1, 3, 2013, 6, '2014-11-05', '1', '', 'LOCALIZADA', 'TIPO 1', 0, '3', '56545', 'ONCOLOGOS DEL CARIBE', 2, '2015-07-06', '', '2015-07-21 12:43:07', '2015-07-21 12:43:07');
 
 -- --------------------------------------------------------
 
@@ -488,7 +490,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `codigo`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Rafael Varela', 'rafa_varela@yahoo.com', '$2y$10$Bs5W1ZNMmgJ9gscP8fK5ae.GdHb2Sv0gKvx4ugQC8c40sRbVbE.r2', '2kwkop3ayalf125jW1PmxNEOAhAyerSiJKqSWWDgA1yv4pABMJjFxlFWOG2o', '0000-00-00 00:00:00', '2015-07-08 11:15:29'),
+(1, 'admin', 'Rafael Varela', 'rafa_varela@yahoo.com', '$2y$10$Bs5W1ZNMmgJ9gscP8fK5ae.GdHb2Sv0gKvx4ugQC8c40sRbVbE.r2', 'w26sP1hYxmxgV9QYldMT8mkWnbAQOQIsu3NO95DMjequhravHmL5NPfHRCUS', '0000-00-00 00:00:00', '2015-07-21 16:00:23'),
 (10, 'RP100', 'Hospital Universitario', 'rp100@test.com', '$2y$10$LLo/oCBAzr9QL.aoD8/a..4YA5xDxVriU6VUV.4hKZ4XXleoCjESO', NULL, '2015-07-05 16:30:46', '2015-07-05 16:30:46'),
 (11, 'RP200', 'RP200', 'rp200@test.com', '$2y$10$v.sv4n/jxANpoo6aH1gaVuNVtjqo4.mWzqWq.Nqvz/ym89FVKQ5rW', NULL, '2015-07-05 16:32:01', '2015-07-05 16:32:01');
 

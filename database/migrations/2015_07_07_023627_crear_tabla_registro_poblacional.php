@@ -42,7 +42,10 @@ class CrearTablaRegistroPoblacional extends Migration {
             $table->string('lugardiganostico',90)->nullable();
             $table->string('numerobiopsia',20)->nullable();
             $table->string('lugartratamiento',90)->nullable();
+
+            // Datos del tratamiento
             $table->integer('datostratamiento')->unsigned();
+            $table->date('fechaultcontrolmed')->nullable();
 
             //Datos del seguimiento
             $table->string('certificadodefuncion',90)->nullable();

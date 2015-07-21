@@ -9,18 +9,36 @@ class Registropoblacional extends Model {
     protected $fillable   = array('cedula','iniciales','sexo','fechanacimiento','edad','residenciahabitual','lugarnacimiento',
                                     'regimenseguridadsocial','eps','estrato','iniciosintomasanio','iniciosintomasmes','fechadiagnostico',
                                     'metododiagnostico','otrotipomuestra','localizacionprimaria','morfologia','localizacionprimaria','estadio',
-                                    'lugardiganostico','numerobiopsia','lugartratamiento','datostratamiento','certificadodefuncion');
+                                    'lugardiganostico','numerobiopsia','lugartratamiento','datostratamiento','fechaultcontrolmed','certificadodefuncion');
 
     public function getFechaNacimientoLargaAttribute()
     {
         $parts = explode('-', $this->fechanacimiento);
-        return "$parts[2] DE " . $this->getNombreMes($parts[1]) . " DE $parts[0]";
+        if(isset($parts[2])):
+            return "$parts[2] DE " . $this->getNombreMes($parts[1]) . " DE $parts[0]";
+        else:
+            return "";
+        endif;
     }
 
     public function getFechaDiagnosticoLargaAttribute()
     {
         $parts = explode('-', $this->fechadiagnostico);
-        return "$parts[2] DE " . $this->getNombreMes($parts[1]) . " DE $parts[0]";
+        if(isset($parts[2])):
+            return "$parts[2] DE " . $this->getNombreMes($parts[1]) . " DE $parts[0]";
+        else:
+            return "";
+        endif;
+    }
+
+    public function getFechaUltControlMedLargaAttribute()
+    {
+        $parts = explode('-', $this->fechaultcontrolmed);
+        if(isset($parts[2])):
+            return "$parts[2] DE " . $this->getNombreMes($parts[1]) . " DE $parts[0]";
+        else:
+            return "";
+        endif;
     }
 
     public function getNombreMes($NumeroMes)

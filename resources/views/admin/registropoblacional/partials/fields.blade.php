@@ -21,7 +21,6 @@
                 {!! Form::label('edad', 'Edad') !!}
                 {!! Form::text('edad', null, ['class' => 'form-control']) !!}
 
-
             </div>
 
             <div class="col-md-6 contact-section-left-grid">
@@ -29,6 +28,7 @@
             </div>
             <div class="col-md-3 contact-section-center-grid">
                 {!! Form::label('localidad', 'Localidad') !!}
+
             </div>
             <div class="col-md-3 contact-section-right-grid">
                 {!! Form::label('estrato', 'Estrato') !!}
@@ -38,10 +38,10 @@
                 {!! Form::select('residenciahabitual', $barrios, null, ['class' => 'form-control', 'width' => '20%']) !!}
             </div>
             <div class="col-md-3 contact-section-center-grid">
-                <input class="form-control" name="localidad" type="text" id="localidad" readonly="readonly">
+                <input class="form-control" name="localidad" type="text" id="localidad" readonly="readonly" value="{!! $ubicacion["localidad"] !!}">
             </div>
             <div class="col-md-3 contact-section-right-grid">
-                <input class="form-control" name="estrato" type="text" id="estrato" readonly="readonly">
+                <input class="form-control" name="estrato" type="text" id="estrato" readonly="readonly" value="{!! $ubicacion["estrato"] !!}">
             </div>
 
             <div class="col-md-12" >
@@ -115,8 +115,11 @@
 
         <div class="panel-body">
             {!! Form::label('datostratamiento', 'Datos tratamiento') !!}
-            {{-- Form::text('datostratamiento', null, ['class' => 'form-control', 'onblur' => 'this.value=this.value.toUpperCase()']) --}}
             {!! Form::select('datostratamiento', $tratamientos, null, ['class' => 'form-control']) !!}
+
+            {!! Form::label('fechaultcontrolmed', 'Fecha último control médico') !!}
+            {!! Form::text('fechaultcontrolmed', null, ['class' => 'form-control']) !!}
+
         </div>
     </div>
 

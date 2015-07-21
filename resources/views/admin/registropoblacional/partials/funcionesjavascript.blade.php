@@ -49,3 +49,26 @@ function getNumeroMes(NombreMes) {
     return NumeroMes;
 
 }
+
+$(document).ready(function(){
+    $('#residenciahabitual').change(function(){
+
+        var direccion = "/admin/localidadyestrato/" + $(this).val();
+
+        $.get(direccion,
+        function(data) {
+            $('#proceso_id').empty();
+            var iCnt = 0;
+            $.each(data, function(key, element) {
+                iCnt++;
+                if(iCnt == 1){
+                    $('#localidad').val(element);
+                }else{
+                    $('#estrato').val(element);
+                }
+            });
+        });
+
+        // alert($(this).val());
+    });
+});

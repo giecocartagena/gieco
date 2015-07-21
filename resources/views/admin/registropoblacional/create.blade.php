@@ -40,8 +40,9 @@
     	@include('admin.registropoblacional.partials.spanishcalendar')        
 
 		$(function() {
-			$( "#fechanacimiento" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
-			$( "#fechadiagnostico" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
+			$( "#fechanacimiento" ).datepicker({ changeYear: true, yearRange: '1920:2100' });
+			$( "#fechadiagnostico" ).datepicker({ changeYear: true, yearRange: '1920:2100' });
+			$( "#fechaultcontrolmed" ).datepicker({ changeYear: true, yearRange: '1920:2100' });
 		});
 
 		@include('admin.registropoblacional.partials.funcionesjavascript')

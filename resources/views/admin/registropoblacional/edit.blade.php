@@ -13,8 +13,7 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Editar registro {{ $registropoblacional->cedula }}</div>
-
+				<div class="panel-heading">Editar registro {!! $registropoblacional->cedula !!}</div>
 				<div class="panel-body">
 
 				    @include('admin.registropoblacional.partials.messages')
@@ -42,34 +41,12 @@
 		$(function() {
 			$( "#fechanacimiento" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
 			$( "#fechadiagnostico" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
+			$( "#fechaultcontrolmed" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
 		});
 
         @include('admin.registropoblacional.partials.funcionesjavascript')
 
 	</script>
 
-	<script>
-    	$(document).ready(function(){
-    		$('#residenciahabitual').change(function(){
 
-                var direccion = "/admin/localidadyestrato/" + $(this).val();
-
-    			$.get(direccion,
-    			function(data) {
-    				$('#proceso_id').empty();
-    				var iCnt = 0;
-    				$.each(data, function(key, element) {
-    					iCnt++;
-    					if(iCnt == 1){
-    					    $('#localidad').val(element);
-    					}else{
-    					    $('#estrato').val(element);
-    					}
-    				});
-    			});
-
-    			// alert($(this).val());
-    		});
-    	});
-    </script>
 @endsection

@@ -66,7 +66,9 @@ class RegistropoblacionalController extends Controller {
 
         $barrios = ['' => ''] + Barrios::lists('nombre', 'id');
         $datos['barrios'] = $barrios;
-		
+
+        // Dejar la localidad y el estrato en blanco
+        $datos['ubicacion'] = ['localidad' => '', 'estrato' => ''];
 
         // return 'pantalla para crear el registro poblacional';
 		return view('admin.registropoblacional.create', $datos);
@@ -85,6 +87,9 @@ class RegistropoblacionalController extends Controller {
         $parts2 = explode(' DE ', $entradas['fechadiagnostico']);
         $entradas['fechadiagnostico'] = "$parts2[2]-" . $this->getNumeroMes($parts2[1]) . "-$parts2[0]";
 
+        // Convertir la fecha del ultimo control medico del JqueryUI.DatePicker a MySQL
+        $parts2 = explode(' DE ', $entradas['fechaultcontrolmed']);
+        $entradas['fechaultcontrolmed'] = "$parts2[2]-" . $this->getNumeroMes($parts2[1]) . "-$parts2[0]";
 
         $registropoblacional = Registropoblacional::create($entradas);
         return redirect()->route('admin.registropoblacional.index');
@@ -123,12 +128,26 @@ class RegistropoblacionalController extends Controller {
         $barrios = Barrios::lists('nombre', 'id');
         $datos['barrios'] = $barrios;
 
-        //Obtener el modelo en base al codigo(id)
+        //Obtener el modelo principal en base al codigo(id)
         $registropoblacional = Registropoblacional::findOrFail($id);
-        $registropoblacional->fechanacimiento  = $registropoblacional->getFechaNacimientoLargaAttribute();
-        $registropoblacional->fechadiagnostico = $registropoblacional->getFechaDiagnosticoLargaAttribute();
+        $registropoblacional->fechanacimiento    = $registropoblacional->getFechaNacimientoLargaAttribute();
+        $registropoblacional->fechadiagnostico   = $registropoblacional->getFechaDiagnosticoLargaAttribute();
+        $registropoblacional->fechaultcontrolmed = $registropoblacional->getFechaUltControlMedLargaAttribute();
 
         $datos['registropoblacional'] = $registropoblacional;
+
+
+        // Obtener la localidad y estrato seleccionados
+        $barrio = Barrios::find($registropoblacional->residenciahabitual);
+        if(isset($barrio)){
+            $localidad = $barrio->localidad;
+            $estrato   = $barrio->estrato;
+        }else{
+            $localidad = "";
+            $estrato   = "";
+        }
+        $datos['ubicacion'] = ['localidad' => $localidad, 'estrato' => $estrato];
+
 
         return view('admin.registropoblacional.edit', $datos);
         // $date = Carbon::now('America/Bogota');
@@ -177,12 +196,27 @@ class RegistropoblacionalController extends Controller {
 
         // Convertir la fecha de nacimiento del JqueryUI.DatePicker a MySQL
         $parts = explode(' DE ', $entradas['fechanacimiento']);
-        $entradas['fechanacimiento'] = "$parts[2]-" . $this->getNumeroMes($parts[1]) . "-$parts[0]";
+        if(isset($parts2[2])){
+            $entradas['fechanacimiento'] = "$parts[2]-" . $this->getNumeroMes($parts[1]) . "-$parts[0]";
+        }else{
+            $entradas['fechanacimiento'] = "";
+        }
 
         // Convertir la fecha de diagnostico del JqueryUI.DatePicker a MySQL
         $parts2 = explode(' DE ', $entradas['fechadiagnostico']);
-        $entradas['fechadiagnostico'] = "$parts2[2]-" . $this->getNumeroMes($parts2[1]) . "-$parts2[0]";
+        if(isset($parts2[2])) {
+            $entradas['fechadiagnostico'] = "$parts2[2]-" . $this->getNumeroMes($parts2[1]) . "-$parts2[0]";
+        }else{
+            $entradas['fechadiagnostico'] = "";
+        }
 
+        // Convertir la fecha de ultimo control medico del JqueryUI.DatePicker a MySQL
+        $parts2 = explode(' DE ', $entradas['fechaultcontrolmed']);
+        if(isset($parts2[2])) {
+            $entradas['fechaultcontrolmed'] = "$parts2[2]-" . $this->getNumeroMes($parts2[1]) . "-$parts2[0]";
+        }else{
+            $entradas['fechaultcontrolmed'] = "";
+        }
 
         // Grabar
         $registropoblacional->fill($entradas);
