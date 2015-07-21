@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
  * Paginas estaticas
  */
@@ -43,5 +43,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 
     // -- USUARIOS  ----------------------------------------------//
     Route::resource('usuario', 'UsuarioController');
+
+    // -- Localidad y estrato del Registro Poblacional -----------//
+
+    Route::get('localidadyestrato/{id}', 'LocalidadyestratoController@getIndex');
 
 });

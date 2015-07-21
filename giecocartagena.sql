@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-07-2015 a las 12:24:15
+-- Tiempo de generación: 21-07-2015 a las 06:11:42
 -- Versión del servidor: 5.6.19-0ubuntu0.14.04.1
 -- Versión de PHP: 5.6.10-1+deb.sury.org~trusty+1
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `giecocartagena`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `barrios`
+--
+
+DROP TABLE IF EXISTS `barrios`;
+CREATE TABLE IF NOT EXISTS `barrios` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(90) COLLATE utf8_unicode_ci NOT NULL,
+  `localidad` varchar(90) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estrato` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Volcado de datos para la tabla `barrios`
+--
+
+INSERT INTO `barrios` (`id`, `nombre`, `localidad`, `estrato`, `created_at`, `updated_at`) VALUES
+(1, 'GETSEMANI', '1', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'CHAMBACU', '1', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'SAN DIEGO', '1', '4', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'MANGA', '2', '3', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -40,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
-(1, 'Tratamientos', '0000-00-00 00:00:00', '2015-07-05 12:28:14');
+(1, 'Tratamientos', '0000-00-00 00:00:00', '2015-07-05 12:27:09');
 
 -- --------------------------------------------------------
 
@@ -269,7 +296,8 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2015_07_05_120258_crear_tabla_eps', 3),
 ('2015_07_05_120447_crear_tabla_estadiostumor', 3),
 ('2015_07_05_120646_crear_tabla_datostratamiento', 3),
-('2015_07_07_023627_crear_tabla_registro_poblacional', 4);
+('2015_07_07_023627_crear_tabla_registro_poblacional', 4),
+('2015_07_20_033220_crear_tabla_barrios', 5);
 
 -- --------------------------------------------------------
 
@@ -372,16 +400,19 @@ CREATE TABLE IF NOT EXISTS `registropoblacional` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `registropoblacional_cedula_unique` (`cedula`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `registropoblacional`
 --
 
 INSERT INTO `registropoblacional` (`id`, `cedula`, `iniciales`, `sexo`, `fechanacimiento`, `edad`, `residenciahabitual`, `lugarnacimiento`, `regimenseguridadsocial`, `eps`, `estrato`, `iniciosintomasanio`, `iniciosintomasmes`, `fechadiagnostico`, `metododiagnostico`, `otrotipomuestra`, `localizacionprimaria`, `morfologia`, `estadio`, `lugardiganostico`, `numerobiopsia`, `lugartratamiento`, `datostratamiento`, `certificadodefuncion`, `created_at`, `updated_at`) VALUES
-(1, '73587852225', 'gc', 'M', '0000-00-00', 37, 'CARRERA 1, CALLE 2', 'CARTAGENA', 'CONTIBUTIVO', 1, 3, 2004, 4, NULL, '3', '', 'DSSD', 'A', 1, '1', '1', 'C', 1, '', '2015-07-07 10:16:57', '2015-07-14 02:48:23'),
+(1, '73587852225', 'gc', 'M', '1938-09-01', 76, 'CARRERA 1, CALLE 2', 'CARTAGENA', 'CONTIBUTIVO', 1, 3, 2004, 4, '2015-09-02', '3', '', 'DSSD', 'A', 1, '1', '1', 'C', 1, '', '2015-07-07 10:16:57', '2015-07-20 02:28:40'),
 (2, '458552369', 'mo', 'F', '0000-00-00', 36, 'CARTAGENA', 'CICUCO', 'CONTIBUTIVO', 2, 2, 0, 0, NULL, '4', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'TIPO 1', 0, '4', 'ABC123456', 'ONCOLOGOS DEL CARIBE', 5, '', '2015-07-07 12:21:59', '2015-07-13 22:48:35'),
-(3, '45956235', 'MM', 'F', '2015-07-09', 26, 'CARRERA 1, CALLE 2', 'SANTA MARTA', NULL, 1, 1, 1956, 4, NULL, '3', '', 'XXX', 'YYYY', 0, '4', '56545', 'XXXXX', 5, '', '2015-07-14 16:47:20', '2015-07-15 03:37:43');
+(3, '45956235', 'MM', 'F', '2015-07-09', 26, 'CARRERA 1, CALLE 2', 'SANTA MARTA', NULL, 1, 1, 1956, 4, '2015-07-02', '3', '', 'XXX', 'YYYY', 0, '4', '56545', 'XXXXX', 5, '', '2015-07-14 16:47:20', '2015-07-15 15:06:34'),
+(4, '656541', 'MF', 'M', '2015-07-10', 0, 'CARTAGENA', 'CARTAGENA', NULL, 1, 1, 1953, 9, '2015-07-16', '1', 'DD', 'DD', 'TIPO 1', 0, '3', '665464', 'ONCOLOGOS DEL CARIBE', 3, '', '2015-07-15 15:09:21', '2015-07-15 15:09:21'),
+(5, '4511212', 'IJ', 'M', '2013-05-07', 60, 'CARTAGENA', 'CARTAGENA', NULL, 1, 1, 1964, 9, '2015-07-02', '3', '', 'LOCALIZADA', 'TIPO 1', 0, '1', '', 'ONCOLOGOS DEL CARIBE', 3, '', '2015-07-20 00:33:57', '2015-07-20 00:33:57'),
+(6, '56454', 'JP', 'F', '1994-07-07', 21, 'CARTAGENA', 'EL GUAMO', NULL, 1, 1, 1958, 10, '2015-07-02', '2', 'MUESTRA ALEATORIA.. OTROS', 'LOCALIZADA', 'A', 0, '4', '5455', 'ONCOLOGOS DEL CARIBE', 4, '', '2015-07-20 02:31:27', '2015-07-20 02:31:27');
 
 -- --------------------------------------------------------
 

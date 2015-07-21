@@ -3,6 +3,7 @@
 @section('estilos')
 	<style>		
 		.form-control{text-transform: uppercase;}
+		.ui-datepicker-year{ color: #010A0F;}
 	</style>
 	{!! Html::style('css/jquery-ui.css') !!}
 @endsection
@@ -39,9 +40,11 @@
     	@include('admin.registropoblacional.partials.spanishcalendar')        
 
 		$(function() {
-			$( "#fechanacimiento" ).datepicker();
-			$( "#fechadiagnostico" ).datepicker();			
+			$( "#fechanacimiento" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
+			$( "#fechadiagnostico" ).datepicker({ changeYear: true,  yearRange: '1920:2100' });
 		});
-		
+
+		@include('admin.registropoblacional.partials.funcionesjavascript')
+
 	</script>
 @endsection

@@ -10,7 +10,7 @@
         dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
         dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sáb'],
         dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
-        dateFormat: 'yy-mm-dd', firstDay: 1,        
+        dateFormat: "dd 'DE' MM 'DE' yy", firstDay: 1,
         initStatus: 'Seleccione la fecha', isRTL: false
     };
     $.datepicker.setDefaults($.datepicker.regional['es']);
